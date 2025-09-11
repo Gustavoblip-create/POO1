@@ -24,6 +24,9 @@ namespace _02_Construtores
         }
 
     }
+    //OverLoad (Sobrecarga) de construtor
+    //Declarar mais de um construtor com a lista de argumentos diferentes
+    //this(5) aciona o construtor que recebe um paramêtro
     public class Quadrado
     {
         //Modificar de acesso Private
