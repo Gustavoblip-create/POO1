@@ -1,2 +1,2 @@
-# POO1
-Progamação Orientada a Objetos
+# Algoritmos-
+Desenvolvimentos de Algoritmos em Portugol c#
