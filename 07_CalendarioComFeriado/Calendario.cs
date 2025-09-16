@@ -107,7 +107,7 @@ namespace _07_CalendarioComFeriado
 
 
             Feriado [] diasFeriados = RetornaFeriados();
-            bool ehFeriado;
+            //bool ehFeriado;
 
             //impressão do calendário
 
@@ -122,19 +122,22 @@ namespace _07_CalendarioComFeriado
                     if (calendario[semana, diaSemana] != 0)
 
                     {
-                        ehFeriado = false;
+                        /* ehFeriado = false;
 
-                        for (int posicaoFeriados = 0; posicaoFeriados < diasFeriados.Length; posicaoFeriados++)
-                        {
-                            if (diasFeriados[posicaoFeriados] != null && diasFeriados[posicaoFeriados].Dia == calendario[semana, diaSemana])
-                            {
-                                ehFeriado = true;
-                                break;
-                            }
-                        }
+                         for (int posicaoFeriados = 0; posicaoFeriados < diasFeriados.Length; posicaoFeriados++)
+                         {
+                             if (diasFeriados[posicaoFeriados] != null && diasFeriados[posicaoFeriados].Dia == calendario[semana, diaSemana])
+                             {
+                                 ehFeriado = true;
+                                 break;
+                             }
+                         }*/
 
                         //if (diasFeriados.Contains(calendario[semana, diaSemana]) || diaSemana == 0)
-                        if(ehFeriado ||diaSemana ==0)
+                        //if(ehFeriado ||diaSemana ==0)
+                        if (diasFeriados.Any(feriado=> feriado != null && feriado.Dia == calendario[semana,diaSemana])||
+                            diaSemana ==0) 
+                            
 
                             Console.ForegroundColor = ConsoleColor.Red;
 
@@ -201,7 +204,7 @@ namespace _07_CalendarioComFeriado
 
             {
 
-                feriados[indice++] = new Feriado (4, "Aniversário Da Cidade");//Aniversário de marilia
+                feriados[indice++] = new Feriado(4, "Aniversário Da Cidade");//Aniversário de marilia
 
                 feriados[indice++] = new Feriado(21, "Tiradentes"); //Tiradentes
 
@@ -209,11 +212,11 @@ namespace _07_CalendarioComFeriado
 
             else if (mes == 5)
 
-                feriados[indice++] = new Feriado(1,"Dia do Trabalho"); //Dia do Trabalho
+                feriados[indice++] = new Feriado(1, "Dia do Trabalho"); //Dia do Trabalho
 
             else if (mes == 7)
 
-                feriados[indice++] = new Feriado (9,"Revolução Constitucionalista de São Paulo");
+                feriados[indice++] = new Feriado(9, "Revolução Constitucionalista de São Paulo");
 
             else if (mes == 9)
 
@@ -221,24 +224,26 @@ namespace _07_CalendarioComFeriado
 
             else if (mes == 10)
 
-                feriados[indice++] = new Feriado (12, "Nossa Senhora Aparecida"); //Nossa Senhora Aparecida
+                feriados[indice++] = new Feriado(12, "Nossa Senhora Aparecida"); //Nossa Senhora Aparecida
 
             else if (mes == 11)
 
             {
 
-                feriados[indice++] = new Feriado (2,"Finados"); //Finados
+                feriados[indice++] = new Feriado(2, "Finados"); //Finados
 
-                feriados[indice++] = new Feriado (15,"Proclamação Da República"); //Proclamação da República
+                feriados[indice++] = new Feriado(15, "Proclamação Da República"); //Proclamação da República
 
-                feriados[indice++] = new Feriado (20, "Consciência Negra"); //Consciência Negra
+                feriados[indice++] = new Feriado(20, "Consciência Negra"); //Consciência Negra
 
             }
 
             else if (mes == 12)
+            {
 
-                feriados[indice++] = new Feriado (8, "Padroeira da Cidade"); //Natal
-            feriados[indice++] = new Feriado(25, "Natal");
+                feriados[indice++] = new Feriado(8, "Padroeira da Cidade"); //Natal
+                feriados[indice++] = new Feriado(25, "Natal");
+            }
 
             DateTime pascoa = DomingoDePascoa();
 
@@ -246,7 +251,7 @@ namespace _07_CalendarioComFeriado
 
             {
 
-                feriados[indice++] = new Feriado(pascoa.Day, "Páscoa"); // adiciona o dia da Páscoa
+              feriados[indice++] = new Feriado(pascoa.Day, "Páscoa"); // adiciona o dia da Páscoa
 
             }
 
