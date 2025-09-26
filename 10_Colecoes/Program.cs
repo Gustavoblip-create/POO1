@@ -11,11 +11,15 @@ using System.Threading.Tasks;
 namespace _10_Colecoes
 
 {
+
     internal class Program
+
     {
+
         static void Main(string[] args)
 
         {
+
             //<Genérico>
 
             List<string> nomes = new List<string>();
@@ -43,13 +47,134 @@ namespace _10_Colecoes
             foreach (string nome in nomes)
 
             {
+
                 Console.WriteLine($" - {nome}");
+
             }
-            Console.WriteLine("impressão dos alunos");
+
+            Console.WriteLine("Impressão dos alunos ");
+
             foreach (Aluno aluno in alunos)
+
             {
-                //Console.WriteLine($" - ID : {aluno.id} Nome {aluno.Nome}");
+
+                // Console.WriteLine($" - ID:{aluno.id} Nome: {aluno.Nome}");
+
                 aluno.ImprimirAluno();
+
+            }
+
+            Dictionary<int, String> dicNomes = new Dictionary<int, String>();
+
+            dicNomes.Add(1, "Gustavo");
+
+            dicNomes.Add(2, "Celso");
+
+            dicNomes.Add(3, "Suely");
+
+            //não pode adicionar chave duplicada no Dicionario
+
+            //dicNomes.Add(3, "Suely")
+
+            Console.WriteLine("Impressão dos dicNomes");
+
+            for (int i = 1; i <= dicNomes.Count; i++)
+
+            {
+
+                Console.WriteLine($" -{dicNomes[i]}");
+
+            }
+
+            Dictionary<int, Aluno> dicAlunos = new Dictionary<int, Aluno>();
+
+            dicAlunos.Add(suely.id, suely);
+
+            dicAlunos.Add(celso.id, celso);
+
+            Console.WriteLine("Impressão dos dicAlunos");
+
+            // for (int i = 1; i <= dicNomes.Count; i++)
+
+            // {
+
+            //   dicAlunos[i].ImprimirAluno();
+
+            // }
+
+            foreach (Aluno aluno in dicAlunos.Values)
+
+            {
+
+                aluno.ImprimirAluno();
+
+            }
+
+
+            Queue<String> filaNomes = new Queue<string>();
+
+            filaNomes.Enqueue("Gustavo");
+
+            filaNomes.Enqueue("Celso");
+
+            filaNomes.Enqueue("Suely");
+
+            Console.WriteLine("Impressão dos filaNomes");
+
+            Console.WriteLine($" 1°) {filaNomes.Dequeue()}");
+
+            foreach (String nome in filaNomes)
+
+            {
+
+                Console.WriteLine($" -{nome}");
+
+            }
+
+            Stack<String> stackNomes = new Stack<String>();
+
+            stackNomes.Push("Gustavo");
+
+            stackNomes.Push("Celso");
+
+            stackNomes.Push("Suely");
+
+            Console.WriteLine("Impressão dos stackNomes");
+
+            Console.WriteLine($" 1°) {stackNomes.Pop()}");
+
+            foreach (String nome in stackNomes)
+
+            {
+
+                Console.WriteLine($" - {nome}");
+
+            }
+
+            HashSet<String> setNomes = new HashSet<String>();
+
+            setNomes.Add("Gustavo");
+
+            setNomes.Add("Celso");
+
+            setNomes.Add("Suely");
+
+            //Ignora valores duplicados
+
+            setNomes.Add("Gustavo");
+
+            setNomes.Add("Celso");
+
+            setNomes.Add("Suely");
+
+            Console.WriteLine("Impressão de setNomes");
+
+            foreach (String nome in setNomes)
+
+            {
+
+                Console.WriteLine($" -{nome}");
+
             }
 
         }
@@ -72,19 +197,32 @@ namespace _10_Colecoes
             {
                 get; set;
             }
-            public  virtual void ImprimirAluno()
+
+            public virtual void ImprimirAluno()
+
             {
+
                 Console.WriteLine($" - ID: {this.id} Nome: {this.Nome}");
+
             }
 
         }
 
         class AlunoEspecial : Aluno
+
         {
-            public string Deficiencia {get; set;}
-            public override void ImprimirAluno()
+
+            public string Deficiencia
             {
-                Console.WriteLine($" - ID: {this.id} Nome: {this.Nome} - {this.Deficiencia}");
+                set; get;
+            }
+
+            public override void ImprimirAluno()
+
+            {
+
+                Console.WriteLine($" - ID: {this.id} Nome: {this.Nome} -{this.Deficiencia}");
+
             }
 
         }
