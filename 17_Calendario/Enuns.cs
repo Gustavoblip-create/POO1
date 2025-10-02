@@ -8,7 +8,7 @@ namespace _17_Calendario
 {
     public enum Mes
     {
-        Janeior = 1,
+        Janeiro = 1,
         Fevereiro,
         Marco,
         Abril,
@@ -16,11 +16,23 @@ namespace _17_Calendario
         Junho,
         Julho,
         agosto,
-        Stemebro,
+        Setembro,
         Outubro,
         Novembro,
         Dezembro
     }
 
+
+    public enum DiaDaSemana
+    {
+
+        Domingo = 0,
+        Segunda,
+        Terça,
+        Quarta,
+        Quinta,
+        Sexta,
+        Sabado
+    }
 
 }

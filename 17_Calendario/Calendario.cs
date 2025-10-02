@@ -114,7 +114,7 @@ namespace _17_Calendario
 
                     {
 
-                        if (diasFeriados.Any(feriado => feriado != null && feriado.Dia == calendario[semana, diaSemana]) || diaSemana == 0)
+                        if (diasFeriados.Any(feriado => feriado != null && feriado.Dia == calendario[semana, diaSemana]) ||(DiaDaSemana)diaSemana == DiaDaSemana.Domingo)
 
                             Console.ForegroundColor = ConsoleColor.Red;
 
@@ -227,6 +227,8 @@ namespace _17_Calendario
                 feriados.Add(new Feriado(CorpuChrist.Day, "Corpus Christi"));
 
             //Array.Sort(feriados);
+
+            feriados.Sort();
 
             return feriados;
 
